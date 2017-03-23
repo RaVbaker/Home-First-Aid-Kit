@@ -57,7 +57,9 @@ class MedsParser {
 }
 
 
-var fileUrl = "http://pub.rejestrymedyczne.csioz.gov.pl/pobieranie_WS/Pobieranie.ashx?filetype=XMLUpdateFile&regtype=RPL_FILES_GROWTH"
+//var fileUrl = "http://pub.rejestrymedyczne.csioz.gov.pl/pobieranie_WS/Pobieranie.ashx?filetype=XMLUpdateFile&regtype=RPL_FILES_GROWTH"
+var basePath = "file:///Users/ravbaker/Code/Home-First-Aid-Kit"
+var fileUrl = "\(basePath)/samples/sample.xml"
 
 let theUrl = URL(string: fileUrl)
 let xml = try XMLDocument.init(contentsOf: theUrl!, options: 0)
