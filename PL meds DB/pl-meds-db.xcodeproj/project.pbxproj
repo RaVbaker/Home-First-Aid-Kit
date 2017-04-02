@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		58AD18D01E7DC4A20074CFA5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD18CF1E7DC4A20074CFA5 /* main.swift */; };
+		58DAA2951E917435006DC837 /* MedsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DAA2941E917435006DC837 /* MedsParser.swift */; };
+		58DAA2971E917450006DC837 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DAA2961E91744F006DC837 /* Medicine.swift */; };
+		58DAA2991E917687006DC837 /* ConsoleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DAA2981E917687006DC837 /* ConsoleApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +26,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		58AD18CC1E7DC4A20074CFA5 /* PL meds DB */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "PL meds DB"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58AD18CC1E7DC4A20074CFA5 /* pl-meds-db */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "pl-meds-db"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58AD18CF1E7DC4A20074CFA5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		58DAA2941E917435006DC837 /* MedsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedsParser.swift; sourceTree = "<group>"; };
+		58DAA2961E91744F006DC837 /* Medicine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
+		58DAA2981E917687006DC837 /* ConsoleApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,11 +51,12 @@
 				58AD18CD1E7DC4A20074CFA5 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		58AD18CD1E7DC4A20074CFA5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				58AD18CC1E7DC4A20074CFA5 /* PL meds DB */,
+				58AD18CC1E7DC4A20074CFA5 /* pl-meds-db */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,17 +64,20 @@
 		58AD18CE1E7DC4A20074CFA5 /* PL meds DB */ = {
 			isa = PBXGroup;
 			children = (
+				58DAA2941E917435006DC837 /* MedsParser.swift */,
 				58AD18CF1E7DC4A20074CFA5 /* main.swift */,
+				58DAA2961E91744F006DC837 /* Medicine.swift */,
+				58DAA2981E917687006DC837 /* ConsoleApp.swift */,
 			);
 			path = "PL meds DB";
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		58AD18CB1E7DC4A10074CFA5 /* PL meds DB */ = {
+		58AD18CB1E7DC4A10074CFA5 /* pl-meds-db */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58AD18D31E7DC4A20074CFA5 /* Build configuration list for PBXNativeTarget "PL meds DB" */;
+			buildConfigurationList = 58AD18D31E7DC4A20074CFA5 /* Build configuration list for PBXNativeTarget "pl-meds-db" */;
 			buildPhases = (
 				58AD18C81E7DC4A10074CFA5 /* Sources */,
 				58AD18C91E7DC4A10074CFA5 /* Frameworks */,
@@ -77,9 +87,9 @@
 			);
 			dependencies = (
 			);
-			name = "PL meds DB";
+			name = "pl-meds-db";
 			productName = "PL meds DB";
-			productReference = 58AD18CC1E7DC4A20074CFA5 /* PL meds DB */;
+			productReference = 58AD18CC1E7DC4A20074CFA5 /* pl-meds-db */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -89,7 +99,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = ReThink;
 				TargetAttributes = {
 					58AD18CB1E7DC4A10074CFA5 = {
@@ -99,7 +109,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 58AD18C71E7DC4A10074CFA5 /* Build configuration list for PBXProject "PL meds DB" */;
+			buildConfigurationList = 58AD18C71E7DC4A10074CFA5 /* Build configuration list for PBXProject "pl-meds-db" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -111,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58AD18CB1E7DC4A10074CFA5 /* PL meds DB */,
+				58AD18CB1E7DC4A10074CFA5 /* pl-meds-db */,
 			);
 		};
 /* End PBXProject section */
@@ -122,6 +132,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				58AD18D01E7DC4A20074CFA5 /* main.swift in Sources */,
+				58DAA2971E917450006DC837 /* Medicine.swift in Sources */,
+				58DAA2951E917435006DC837 /* MedsParser.swift in Sources */,
+				58DAA2991E917687006DC837 /* ConsoleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +184,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "pl-meds-db";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -212,7 +226,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "pl-meds-db";
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -237,7 +253,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		58AD18C71E7DC4A10074CFA5 /* Build configuration list for PBXProject "PL meds DB" */ = {
+		58AD18C71E7DC4A10074CFA5 /* Build configuration list for PBXProject "pl-meds-db" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58AD18D11E7DC4A20074CFA5 /* Debug */,
@@ -246,7 +262,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58AD18D31E7DC4A20074CFA5 /* Build configuration list for PBXNativeTarget "PL meds DB" */ = {
+		58AD18D31E7DC4A20074CFA5 /* Build configuration list for PBXNativeTarget "pl-meds-db" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58AD18D41E7DC4A20074CFA5 /* Debug */,
