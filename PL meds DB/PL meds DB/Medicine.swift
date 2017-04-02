@@ -9,6 +9,7 @@
 import Foundation
 
 struct Medicine {
+  let id: String
   var atcId: String
   var name: String
   var substances: [String]
@@ -18,6 +19,7 @@ struct Medicine {
   var producer: String
   
   static func buildFromXmlElement(_ element: XMLElement) -> [Medicine] {
+    var id = element.attribute(forName: "id")!.stringValue!
     let name = element.attribute(forName: "nazwaProduktu")!.stringValue!
     let atcId = element.attribute(forName: "kodATC")?.stringValue ?? "" // can be empty
     
@@ -31,10 +33,14 @@ struct Medicine {
     let producer = element.attribute(forName: "podmiotOdpowiedzielny")!.stringValue!
     
     return variants.map { variant in
+      if let variantId = variant.attribute(forName: "id")?.stringValue {
+        id += "-\(variantId)"
+      }
       let variantName = (variant.attribute(forName: "wielkosc")!.stringValue!) + " " + (variant.attribute(forName: "jednostkaWielkosci")?.stringValue ?? "")
       let ean = variant.attribute(forName: "kodEAN")?.stringValue ?? ""
       
       return Medicine(
+        id: id,
         atcId: atcId,
         name: name + " " + variantName,
         substances: substances,
