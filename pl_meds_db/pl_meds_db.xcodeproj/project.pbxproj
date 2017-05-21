@@ -15,11 +15,24 @@
 		582AC6011ED0A83D00D88365 /* ConsoleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582AC5ED1ED0A51A00D88365 /* ConsoleApp.swift */; };
 		582AC6031ED0A83D00D88365 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582AC5EF1ED0A51A00D88365 /* Medicine.swift */; };
 		582AC6041ED0A83D00D88365 /* MedsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582AC5F01ED0A51A00D88365 /* MedsParser.swift */; };
-		582AC6081ED0A95600D88365 /* full-sample.xml in Resources */ = {isa = PBXBuildFile; fileRef = 582AC6061ED0A95600D88365 /* full-sample.xml */; };
-		582AC6091ED0A95600D88365 /* sample.xml in Resources */ = {isa = PBXBuildFile; fileRef = 582AC6071ED0A95600D88365 /* sample.xml */; };
+		582AC6201ED1B9A700D88365 /* full-sample.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 582AC60B1ED1A47D00D88365 /* full-sample.xml */; };
+		582AC6211ED1B9A700D88365 /* sample.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 582AC60C1ED1A47D00D88365 /* sample.xml */; };
+		582AC6221ED1BC3000D88365 /* full-sample.xml in Resources */ = {isa = PBXBuildFile; fileRef = 582AC60B1ED1A47D00D88365 /* full-sample.xml */; };
+		582AC6231ED1BC3300D88365 /* sample.xml in Resources */ = {isa = PBXBuildFile; fileRef = 582AC60C1ED1A47D00D88365 /* sample.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		582AC61F1ED1B99E00D88365 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = samples;
+			dstSubfolderSpec = 7;
+			files = (
+				582AC6201ED1B9A700D88365 /* full-sample.xml in CopyFiles */,
+				582AC6211ED1B9A700D88365 /* sample.xml in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5865ADCA1ED0A41D005F947C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,8 +52,8 @@
 		582AC5F91ED0A7A200D88365 /* PL_meds_db_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PL_meds_db_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		582AC5FB1ED0A7A200D88365 /* MedsParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedsParserTests.swift; sourceTree = "<group>"; };
 		582AC5FD1ED0A7A200D88365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		582AC6061ED0A95600D88365 /* full-sample.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "full-sample.xml"; sourceTree = "<group>"; };
-		582AC6071ED0A95600D88365 /* sample.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = sample.xml; path = PL_meds_db_Tests/samples/sample.xml; sourceTree = SOURCE_ROOT; };
+		582AC60B1ED1A47D00D88365 /* full-sample.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "full-sample.xml"; sourceTree = "<group>"; };
+		582AC60C1ED1A47D00D88365 /* sample.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = sample.xml; sourceTree = "<group>"; };
 		5865ADCC1ED0A41D005F947C /* pl_meds_db */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pl_meds_db; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -65,18 +78,17 @@
 		582AC5FA1ED0A7A200D88365 /* PL_meds_db_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				582AC6051ED0A95600D88365 /* samples */,
 				582AC5FB1ED0A7A200D88365 /* MedsParserTests.swift */,
 				582AC5FD1ED0A7A200D88365 /* Info.plist */,
 			);
 			path = PL_meds_db_Tests;
 			sourceTree = "<group>";
 		};
-		582AC6051ED0A95600D88365 /* samples */ = {
+		582AC60A1ED1A47D00D88365 /* samples */ = {
 			isa = PBXGroup;
 			children = (
-				582AC6061ED0A95600D88365 /* full-sample.xml */,
-				582AC6071ED0A95600D88365 /* sample.xml */,
+				582AC60B1ED1A47D00D88365 /* full-sample.xml */,
+				582AC60C1ED1A47D00D88365 /* sample.xml */,
 			);
 			path = samples;
 			sourceTree = "<group>";
@@ -84,6 +96,7 @@
 		5865ADC31ED0A41D005F947C = {
 			isa = PBXGroup;
 			children = (
+				582AC60A1ED1A47D00D88365 /* samples */,
 				5865ADCE1ED0A41D005F947C /* pl_meds_db */,
 				582AC5FA1ED0A7A200D88365 /* PL_meds_db_Tests */,
 				5865ADCD1ED0A41D005F947C /* Products */,
@@ -137,6 +150,7 @@
 				5865ADC81ED0A41D005F947C /* Sources */,
 				5865ADC91ED0A41D005F947C /* Frameworks */,
 				5865ADCA1ED0A41D005F947C /* CopyFiles */,
+				582AC61F1ED1B99E00D88365 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -153,6 +167,9 @@
 		5865ADC41ED0A41D005F947C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = ReThink;
@@ -193,8 +210,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				582AC6081ED0A95600D88365 /* full-sample.xml in Resources */,
-				582AC6091ED0A95600D88365 /* sample.xml in Resources */,
+				582AC6221ED1BC3000D88365 /* full-sample.xml in Resources */,
+				582AC6231ED1BC3300D88365 /* sample.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,8 +248,10 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VNGXAYB5N8;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = PL_meds_db_Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				ON_DEMAND_RESOURCES_INITIAL_INSTALL_TAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ravbaker.PL-meds-db-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -245,8 +264,10 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VNGXAYB5N8;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = PL_meds_db_Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				ON_DEMAND_RESOURCES_INITIAL_INSTALL_TAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ravbaker.PL-meds-db-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -377,6 +398,7 @@
 				582AC6001ED0A7A200D88365 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5865ADC71ED0A41D005F947C /* Build configuration list for PBXProject "pl_meds_db" */ = {
 			isa = XCConfigurationList;

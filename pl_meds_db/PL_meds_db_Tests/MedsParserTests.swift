@@ -10,9 +10,14 @@ import XCTest
 
 class MedsParserTests: XCTestCase {
   
+  var testBundle: Bundle?
+  
   override func setUp() {
     super.setUp()
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    if testBundle == nil {
+      testBundle = Bundle(for: type(of: self))
+    }
   }
   
   override func tearDown() {
@@ -46,8 +51,7 @@ class MedsParserTests: XCTestCase {
   }
   
   func sampleXMLDocument(_ sampleName: String = "sample") -> XMLDocument {
-    let testBundle = Bundle(for: type(of: self))
-    let fileURL = testBundle.url(forResource: sampleName, withExtension: "xml")
+    let fileURL = testBundle!.url(forResource: sampleName, withExtension: "xml")
     return try! XMLDocument.init(contentsOf: fileURL!, options: 0)
   }
   

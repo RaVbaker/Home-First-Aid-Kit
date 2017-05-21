@@ -9,8 +9,6 @@
 import Foundation
 
 class ConsoleApp {
-  let basePath = "file:///Users/ravbaker/Code/Home-First-Aid-Kit"
-  
   var list: [Medicine] = []
   
   init(_ args: [String]) {
@@ -31,6 +29,8 @@ class ConsoleApp {
     print("Znaleziono: \(list.count) leków")
   }
   
+  private
+  
   func dataSource(_ source: String) -> String {
     switch source {
     case "changes":
@@ -38,12 +38,17 @@ class ConsoleApp {
     case "latest":
       return "http://pub.rejestrymedyczne.csioz.gov.pl/pobieranie_WS/Pobieranie.ashx?filetype=XMLFile&regtype=RPL_FILES_BASE"
     case "fast", "default":
-      return "\(self.basePath)/samples/sample.xml"
+      return resourcePath(for: "sample")
     case "slow", "full":
-      return "\(self.basePath)/samples/full-sample.xml"
+      return resourcePath(for: "full-sample")
     default:
       fputs("ERROR: unsupported datasource parameter", stderr)
       exit(1)
+      
     }
+  }
+  
+  func resourcePath(for name: String) -> String {
+    return Bundle.main.url(forResource: name, withExtension: "xml")!.absoluteString
   }
 }
