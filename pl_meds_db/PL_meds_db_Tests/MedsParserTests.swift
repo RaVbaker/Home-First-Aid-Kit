@@ -30,6 +30,44 @@ class MedsParserTests: XCTestCase {
     XCTAssertEqual(parsedMedsCount, 284)
   }
   
+  func testThatRecordsAreMedicinesWithProperProperties() {
+    let records: [Medicine] = self.parse()
+    let medicine = records[2] // taking this one cause it has another variant
+    
+    XCTAssertEqual(medicine.atcId, "J01MA06")
+    XCTAssertEqual(medicine.name, "Nolicin 10 tabl.")
+    XCTAssertEqual(medicine.substances, ["Norfloxacinum"])
+    XCTAssertEqual(medicine.type, "tabletki powlekane")
+    XCTAssertEqual(medicine.ean, "5909990085316")
+    XCTAssertEqual(medicine.description, "Norfloxacinum 400 mg tabletki powlekane")
+    XCTAssertEqual(medicine.producer, "Krka, d.d., Novo mesto")
+  }
+  
+  func testThatOtherVariantOfSameMedicineHasSimilarProperties() {
+    let records: [Medicine] = self.parse()
+    let medicine = records[3]
+    
+    XCTAssertEqual(medicine.atcId, "J01MA06")
+    XCTAssertEqual(medicine.name, "Nolicin 20 tabl.")
+    XCTAssertEqual(medicine.substances, ["Norfloxacinum"])
+    XCTAssertEqual(medicine.type, "tabletki powlekane")
+    XCTAssertEqual(medicine.ean, "5909990085323")
+    XCTAssertEqual(medicine.description, "Norfloxacinum 400 mg tabletki powlekane")
+    XCTAssertEqual(medicine.producer, "Krka, d.d., Novo mesto")
+  }
+  
+  func testThereAreNoNonHumanMedsParsed() {
+    let fullXMLDocument = sampleXMLDocument()
+    let fetchNonHumanMed = fullXMLDocument.rootElement()!.elements(forName: "produktLeczniczy")
+    .filter { $0.attribute(forName: "rodzajPreparatu")?.stringValue != "ludzki" }.first!
+    let sampleATC = fetchNonHumanMed.attribute(forName: "kodATC")!.stringValue!
+    
+    let foundNonHumanMed = self.parse().filter({
+      $0.atcId == sampleATC
+      }).first
+    XCTAssertNil(foundNonHumanMed, "We found a non human med in medicines list!")
+  }
+  
   func testSamplePerformance() {
     // This is an example of a performance test case.
     self.measure {
